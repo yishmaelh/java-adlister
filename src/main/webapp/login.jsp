@@ -7,19 +7,29 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<% if (request.getMethod().equalsIgnoreCase("POST")){
+<% if (request.getMethod().equalsIgnoreCase("POST")) {
     String username = request.getParameter("username");
     String password = request.getParameter("password");
-    if(password.equals("password") && username.equals("username")){
-    response.sendRedirect("/profile.jsp");
+    if (password.equals("password") && username.equals("username")) {
+        response.sendRedirect("/profile.jsp");
     }
 }
 %>
 <html>
 <head>
-    <title>Some Login Form</title>
+    <title>Welcome to the Login Portal</title>
 </head>
 <body>
-
+<form action="login.jsp" method="post">
+    <div class="form">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username">
+    </div>
+    <div class="form">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+    </div>
+    <button type="submit" class="btn btn-block">Login</button>
+</form>
 </body>
 </html>
