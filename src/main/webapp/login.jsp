@@ -18,6 +18,7 @@
 <html>
 <head>
     <title>Welcome to the Login Portal</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 <form action="login.jsp" method="post">
