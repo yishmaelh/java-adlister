@@ -3,3 +3,20 @@
     padding: 0;
 }
 
+form {
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+body, html {
+    background-color: darkcyan;
+    font-family: AppleGothic, sans-serif;
+}
+
+
+form {
+    margin: 1em;
+    padding: 1em;
+}
