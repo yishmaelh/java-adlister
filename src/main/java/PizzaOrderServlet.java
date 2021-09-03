@@ -8,12 +8,18 @@ import java.util.Arrays;
 
 @WebServlet(name= "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet{
-    protected void doGet(HttpServletRequest request, HttpServletResponse response){
-        request.getParameter("crust");
-        request.getParameter("sauce");
-        request.getParameter("size");
-        request.getParameterValues("toppings");
-        request.getParameterValues("address")
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/pizza-order.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println(request.getParameter("crust"));
+        System.out.println(request.getParameter("sauce"));
+        System.out.println(request.getParameter("chicken"));
+        System.out.println(request.getParameter("pineapple"));
+        System.out.println(request.getParameter("cheese"));
+        System.out.println(request.getParameter("address"));
+        request.getRequestDispatcher("/pizza-order.jsp").forward(request, response);
     }
 
 }
