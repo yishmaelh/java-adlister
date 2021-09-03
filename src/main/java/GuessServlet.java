@@ -22,7 +22,7 @@ public class GuessServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/guess.jsp").forward(request, response);
+        request.getRequestDispatcher("/guess").forward(request, response);
     }
 }
 

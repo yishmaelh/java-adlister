@@ -12,10 +12,11 @@
 </head>
 <body>
 <h1>Random Number</h1>
-<form action="/guess.jsp" method="POST">
+<form action="/guess" method="POST">
   <div>
     <label for="userGuess">Please choose a number from 1 to 3:</label>
     <input id="userGuess" name="userGuess" class="form-control" type="text">
+    <button type="submit">Confirm Guess</button>
   </div>
 </form>
 </body>
