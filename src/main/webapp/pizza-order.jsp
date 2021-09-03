@@ -12,6 +12,7 @@
 </head>
 <body>
 <form action="/pizza-order" method="post">
+    <h3>Choose Crust</h3>
     <div class="form">
         <label for="crust">
             Crust
@@ -22,6 +23,7 @@
             <option>Deep Dish</option>
         </select>
     </div>
+    <h3>Choose Sauce</h3>
     <div class="form">
         <label for="sauce">
             Sauce
@@ -32,6 +34,7 @@
             <option>Alfredo</option>
         </select>
     </div>
+    <h3>Choose Size</h3>
     <div class="form">
         <label for="size">
             Size
@@ -48,13 +51,17 @@
         <input type="checkbox" id="chicken" name="chicken" value="chicken" >
     </div>
     <div>
-        <label for="pineapple">Mushrooms</label>
+        <label for="pineapple">Pineapple</label>
         <input type="checkbox" id="pineapple" name="pineapple" value="pineapple" >
     </div>
     <div>
         <label for="cheese">Cheese</label>
         <input type="checkbox" id="cheese" name="cheese" value="cheese" >
     </div>
+    <h3>Confirm Address and Order</h3>
+    <label for="address" >Delivery Address:</label>
+    <input id="address" name="address" type="text">
+    <button type="submit">Confirm Order</button>
 </form>
 
 </body>
