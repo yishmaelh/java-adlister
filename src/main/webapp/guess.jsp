@@ -11,11 +11,11 @@
   <title>Guess A Number</title>
 </head>
 <body>
-<h1 style="text-align: center; margin: 90px">The Guessing Game</h1>
+<h1>Random Number</h1>
 <form action="/guess.jsp" method="POST">
   <div>
-    <label for="numberGuess">Please guess a number from 1 to 3:</label>
-    <input id="numberGuess" name="numberGuess" class="form-control" type="text">
+    <label for="userGuess">Please choose a number from 1 to 3:</label>
+    <input id="userGuess" name="userGuess" class="form-control" type="text">
   </div>
 </form>
 </body>
