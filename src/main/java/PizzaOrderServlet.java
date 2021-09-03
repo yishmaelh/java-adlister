@@ -8,6 +8,12 @@ import java.util.Arrays;
 
 @WebServlet(name= "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet{
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response){
+        request.getParameter("crust");
+        request.getParameter("sauce");
+        request.getParameter("size");
+        request.getParameterValues("toppings");
+        request.getParameterValues("address")
+    }
 
 }
