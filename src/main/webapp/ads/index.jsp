@@ -11,7 +11,7 @@
     <title>Ads for One, Ads for All</title>
 </head>
 <body>
-<h1>Here are all the ads:</h1>
+<h1>Here are all of our current ads:</h1>
 
 <c:forEach var="ad" items="${ads}">
     <div class="ad">
