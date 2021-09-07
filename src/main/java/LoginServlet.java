@@ -11,5 +11,16 @@ import java.io.IOException;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        boolean adminLogin = username.equals("admin") && password.equals("password");
+
+        if(adminLogin){
+            HttpSession session = request.getSession();
+            session.setAttribute("isAdmin",true);
+            response.sendRedirect("/profile");
+        } else{
+            HttpSession session = request.getSession();
+            session.setAttribute("isAdmin", false);
+            response.sendRedirect("/login");
+        }
     }
-    }
+}
