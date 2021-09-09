@@ -1,6 +1,7 @@
+import java.util.List;
+import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import com.mysql.cj.jdbc.Driver;
 
 public class MySqlAdsDao implements Ads{
@@ -20,7 +21,22 @@ public class MySqlAdsDao implements Ads{
     }
     @Override
     public List<Ad> all() {
-        return null;
+        List<Ad> ads = new ArrayList<>();
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM ads");
+            while(resultSet.next()){
+                ads.add(new Ad(
+                        resultSet.getLong("id"),
+                        resultSet.getLong("user_id"),
+                        resultSet.getString("title"),
+                        resultSet.getString("description")
+                ));
+            }
+        }catch(SQLException e){
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+        return ads;
     }
 
     @Override
