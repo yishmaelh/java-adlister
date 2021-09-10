@@ -44,6 +44,20 @@ public class MySqlUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        return null;
+        String insert = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+        Long result = null;
+        try {
+            PreparedStatement stmt = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getPassword());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            result = rs.getLong(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }
